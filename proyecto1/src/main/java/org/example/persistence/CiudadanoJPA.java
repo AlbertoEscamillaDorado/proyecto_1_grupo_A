@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class CiudadanoJPA {
-    public void agregarCiudadano(String nombre, int telefono) {
+    public void agregarCiudadano(String nombre, Long telefono) {
         EntityManager em = ConfigJPA.getEntityManager();
         em.getTransaction().begin();
         em.persist(new Ciudadano(nombre,telefono));

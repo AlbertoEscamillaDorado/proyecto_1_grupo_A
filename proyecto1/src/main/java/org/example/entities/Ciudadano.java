@@ -11,13 +11,13 @@ public class Ciudadano {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private int telefono;
+    private Long telefono;
     @OneToMany(mappedBy = "ciudadano", cascade = CascadeType.ALL)
     private List<Turno> turnos = new ArrayList<>();
 
     public Ciudadano() {}
 
-    public Ciudadano(String nombre, int telefono) {
+    public Ciudadano(String nombre, Long telefono) {
         this.nombre = nombre;
         this.telefono = telefono;
     }
@@ -38,11 +38,11 @@ public class Ciudadano {
         this.nombre = nombre;
     }
 
-    public int getTelefono() {
+    public Long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
 

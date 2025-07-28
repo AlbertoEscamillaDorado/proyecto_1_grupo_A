@@ -8,7 +8,7 @@ import java.util.List;
 public class CiudadanoController {
     CiudadanoJPA ciudadanoJPA = new CiudadanoJPA();
 
-    public void agregarCiudadano(String nombre, int telefono) {
+    public void agregarCiudadano(String nombre, Long telefono) {
         ciudadanoJPA.agregarCiudadano(nombre,telefono);
     }
 
