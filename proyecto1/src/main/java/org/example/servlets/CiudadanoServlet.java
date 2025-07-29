@@ -3,7 +3,7 @@ package org.example.servlets;
 import org.example.controllers.CiudadanoController;
 import org.example.entities.Ciudadano;
 
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
