@@ -20,6 +20,11 @@ public class CiudadanoController {
         return ciudadanoJPA.consultarCiudadano(id);
     }
 
+    public void update(Long id, String nombre, String apellido) {
+
+    }
+
+
     //Metodo para que no haya respuestas vacías
     /*private Type<T> leerNoVacio() {
         String entrada = scanner.nextLine();

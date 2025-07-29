@@ -2,27 +2,28 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.example.entities.Ciudadano" %>
 <html>
-<head><title>L</title></head>
+<head><title></title></head>
 <body>
-<h2>Lista del supermercado</h2>
+<h2>Lista de Ciudadanos</h2>
 <table border="1">
-    <tr><th>Nombre</th><th>Cantidad</th><th>Precio</th></tr>
+    <tr><th>Id</th><th>Nombre</th><th>Telefono</th></tr>
     <%
-    List<Producto> productos = (List<Producto>) request.getAttribute("productos");
-    if (productos != null) {
-    for (Producto p : productos) {
+    List<Ciudadano> ciudadanos = (List<Ciudadano>) request.getAttribute("ciudadanos");
+    if (ciudadanos != null) {
+    for (Ciudadano c : ciudadanos) {
     %>
     <tr>
-        <td><%= p.getNombre() %></td>
-        <td><%= p.getCantidad() %></td>
-        <td>$<%= p.getPrecio() %></td>
+        <td><%= c.getId() %></td>
+        <td><%= c.getNombre() %></td>
+        <td><%= c.getTelefono() %></td>
+
     </tr>
     <%
     }
     }
     %>
 </table>
-<br><a href="index.jsp">Agregar otro producto</a>
+<br><a href="index.jsp">Agregar otro ciudadano</a>
 </body>
 </html>
 

@@ -2,10 +2,12 @@ package org.example.entities;
 
 import jakarta.persistence.*;
 import org.example.enums.Estado;
+import org.hibernate.engine.internal.Cascade;
 
 import java.time.LocalDate;
 
 @Entity
+@Table (name = "turnos")
 public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +17,7 @@ public class Turno {
     private String descripcionTramite;
     private Estado estado;
     @ManyToOne
+    @JoinColumn(name = "ciudadanoId")
     private Ciudadano ciudadano;
 
     public Turno() {}
