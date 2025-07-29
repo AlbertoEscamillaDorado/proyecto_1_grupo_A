@@ -1,15 +1,16 @@
-package com.example.servlets;
+package org.example.servlets;
 
-import com.example.controllers.CiudadanoController;
-import com.example.entities.Ciudadano;
+import org.example.controllers.CiudadanoController;
+import org.example.entities.Ciudadano;
 
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/crearciudadanos")
