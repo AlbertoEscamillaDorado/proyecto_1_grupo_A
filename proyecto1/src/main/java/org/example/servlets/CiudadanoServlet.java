@@ -14,19 +14,20 @@ import java.util.List;
 
 @WebServlet(urlPatterns = "/crearciudadanos")
 public class CiudadanoServlet extends HttpServlet {
+    private List<Ciudadano> ciudadanos = new ArrayList<>();
 
     private final CiudadanoController ciudadanoController = new CiudadanoController();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String nombre = request.getParameter("nombre");
+        Long telefono = Long.parseLong(request.getParameter("telefono"));
 
-        //enviar datos a la vista
-        //request.setAttribute("nombre", "Brian");
-
-        List<Ciudadano> listaCiudadanos = ciudadanoController.findAll();
+        ciudadanos.add(new Ciudadano(nombre,telefono));
+        ciudadanoController.agregarCiudadano(nombre, telefono);
 
 
-        request.setAttribute("listado", listaCiudadanos);
+        request.setAttribute("ciudadanos", ciudadanos);
 
         request.getRequestDispatcher("ciudadanosForm.jsp").forward(request, response);
     }
