@@ -86,7 +86,7 @@ public class Turno {
                 ", fecha: " + fecha +
                 ", descripcionTramite: '" + descripcionTramite + '\'' +
                 ", estado: " + estado +
-                ", ciudadano: " + ciudadano +
+                ", ciudadano: " + ciudadano.getId() +
                 '}';
     }
 }

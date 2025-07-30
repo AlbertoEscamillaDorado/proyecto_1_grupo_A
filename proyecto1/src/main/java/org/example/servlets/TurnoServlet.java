@@ -15,7 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns = "/turnos")
 public class TurnoServlet extends HttpServlet {
@@ -23,37 +26,28 @@ public class TurnoServlet extends HttpServlet {
 
     private final TurnoController turnoController = new TurnoController();
     private final CiudadanoController ciudadanoController = new CiudadanoController();
+    // mostrar los datos de un turno
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long id = 0L;
-        
         Turno turnoEncontrado = new Turno();
-        turnoEncontrado.setId(id);
-        //turnoEncontrado.setIdProgresivo(GenerarIdProgresivo.generarIdProgresivo());
-        //turnoEncontrado.setFecha(LocalDate.now());
-        //turnoEncontrado.setDescripcionTramite("");
-        //turnoEncontrado.setEstado(Estado.EN_ESPERA);
-        //turnoEncontrado.setCiudadano(new Ciudadano());
+        turnos = turnoController.listarTurnos();
 
+        String fechaParam = request.getParameter("fecha");
+        String estadoParam = request.getParameter("estado");
 
-        String idParam = request.getParameter("id");
-        if (idParam != null) {
-            try {
-                id = Long.parseLong(idParam);
-                System.out.println("--------- "+ id);
-                // busco el turno
-                turnoEncontrado =  turnoController.consultarTurno(id);
-            } catch (NumberFormatException e) {
-                System.err.println("Valor no valido");
-            }
-        }
+        List<Turno> turnosFiltrados = turnos.stream()
+                // Filtra por fecha si no es nula ni vacía
+                .filter(v -> fechaParam == null || fechaParam.isEmpty() || v.getFecha().equals(LocalDate.parse(fechaParam)))
+                // Filtra por estado si no es nulo ni vacío
+                .filter(v -> estadoParam == null || estadoParam.isEmpty() || v.getEstado().equals(Estado.valueOf(estadoParam)))
+                .sorted(Comparator.comparing(Turno::getIdProgresivo))
+                .collect(Collectors.toList());
 
-        request.setAttribute("id", turnoEncontrado.getId());
-        //request.setAttribute("nombre", turnoEncontrado.getNombre());
-        //request.setAttribute("teléfono", turnoEncontrado.getTelefono());
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.setAttribute("turnos", turnosFiltrados);
+        request.getRequestDispatcher("turnos.jsp").forward(request, response);
     }
-
+    // recoger los datos de un turno y lo añade a la BBDD
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -63,10 +57,14 @@ public class TurnoServlet extends HttpServlet {
         Estado estado = Estado.EN_ESPERA;
         Ciudadano ciudadano = ciudadanoController.consultarCiudadano(Long.valueOf(request.getParameter("ciudadano")));
 
-        turnoController.agregarTurno(idProgresivo, fecha,descripcionTramite,estado,ciudadano);
+        if (ciudadano != null) {
+            turnoController.agregarTurno(idProgresivo, fecha, descripcionTramite, estado, ciudadano);
+        }
         turnos = turnoController.listarTurnos();
         request.setAttribute("turnos", turnos);
         request.getRequestDispatcher("turnos.jsp").forward(request, response);
+        response.sendRedirect("index.jsp");
+
     }
 
 }

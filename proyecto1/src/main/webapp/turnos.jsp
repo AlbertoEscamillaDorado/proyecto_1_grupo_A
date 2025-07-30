@@ -25,6 +25,21 @@
     }
     }
     %>
+    <form action="turnos" method="get">
+        <div>
+        <input type="radio" id="enEspera" name="estado" value="EN_ESPERA">
+        <label for="enEspera">En espera</label><br>
+        <input type="radio" id="yaAtendido" name="estado" value="YA_ATENDIDO">
+        <label for="yaAtendido">Ya atendido</label><br>
+        </div>
+
+        <div>
+            <input type="date" id="fecha" name="fecha" >
+            <label for="fecha">Fecha</label><br>
+        </div>
+
+        <input type="submit" value="Filtrar">
+    </form>
 </table>
 <br><a href="index.jsp">Página Principal</a>
 </body>

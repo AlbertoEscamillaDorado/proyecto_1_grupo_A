@@ -61,7 +61,6 @@ public class Ciudadano {
                 "id: " + id +
                 ", nombre: '" + nombre + '\'' +
                 ", telefono: " + telefono +
-                ", turnos: " + turnos +
                 '}';
     }
 }

@@ -9,5 +9,6 @@
 
     <input type="submit" value="Agregar">
 </form>
+<br><a href="turnos.jsp">Lista de turnos</a>
 </body>
 </html>
