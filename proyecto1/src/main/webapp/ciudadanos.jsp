@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.example.entities.Ciudadano" %>
+<%@ include file="partials/header.jsp" %>
 <html>
 <head><title></title></head>
 <body>
 <h2>Lista de Ciudadanos</h2>
-<table border="1">
+<table border="1" id="customers">
     <tr><th>Id</th><th>Nombre</th><th>Telefono</th></tr>
     <%
     List<Ciudadano> ciudadanos = (List<Ciudadano>) request.getAttribute("ciudadanos");
@@ -23,12 +24,10 @@
     }
     %>
 </table>
-<br>
-<a href="index.jsp">
-    <input type="button" value="Volver a la página principal">
 </a>
 </body>
 </html>
+<%@ include file="partials/footer.jsp" %>
 
 
 

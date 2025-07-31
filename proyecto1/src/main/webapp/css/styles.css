@@ -247,6 +247,11 @@ display: flex;
   gap: 20px;
 }
 
+.form-container div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .form-container .form-group {
   display: flex;
   flex-direction: column;
@@ -269,4 +274,40 @@ display: flex;
   font-family: inherit;
   background-color: white;
   border: 1px solid #414141;
+}
+
+.form-body {
+    display: grid;
+    grid-template-columns: 28% 1fr;
+}
+
+/*Tablas en general*/
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  table-layout: fixed;
+}
+
+#customers td, #customers th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+#customers tr:nth-child(even){background-color: #cde7ff;}
+
+#customers tr:hover {background-color: #feffe3;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #a6d5ff;
+  color: black;
+  width: 200px;
 }

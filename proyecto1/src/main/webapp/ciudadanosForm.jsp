@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
           <label for="telefono">Introduzca su número de teléfono</label>
-          <input type="number" id="telefono" name="telefono" required>
+          <input type="text" id="telefono" name="telefono" required>
         </div>
         <button type="submit" class="cssbuttons-io">
           <span>
