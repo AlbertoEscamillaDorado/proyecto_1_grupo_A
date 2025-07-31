@@ -29,8 +29,6 @@ public class TurnoServlet extends HttpServlet {
     // mostrar los datos de un turno
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long id = 0L;
-        Turno turnoEncontrado = new Turno();
         turnos = turnoController.listarTurnos();
 
         String fechaParam = request.getParameter("fecha");

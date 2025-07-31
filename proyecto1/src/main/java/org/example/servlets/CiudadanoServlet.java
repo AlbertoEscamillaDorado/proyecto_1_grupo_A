@@ -21,20 +21,7 @@ public class CiudadanoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long id = 0L;
-        Ciudadano ciudadanoEncontrado = new Ciudadano();
-
-        String idParam = request.getParameter("id");
-        if (idParam != null) {
-            try {
-                id = Long.parseLong(idParam);
-                System.out.println("--------- "+ id);
-                // busco el ciudadano
-                ciudadanoEncontrado =  ciudadanoController.consultarCiudadano(id);
-            } catch (NumberFormatException e) {
-                System.err.println("Valor no valido");
-            }
-        }
+        ciudadanos = ciudadanoController.listarCiudadanos();
         request.setAttribute("ciudadanos", ciudadanos);
         request.getRequestDispatcher("ciudadanos.jsp").forward(request, response);
     }
