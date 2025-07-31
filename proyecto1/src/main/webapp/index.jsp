@@ -1,6 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="partials/header.jsp" %>
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Registro</title>
+</head>
 <body>
 <h2>Elija una acción</h2>
 <div class="contenedor">
