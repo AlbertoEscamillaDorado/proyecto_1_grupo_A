@@ -23,7 +23,10 @@
     }
     %>
 </table>
-<br><a href="index.jsp">Agregar otro ciudadano</a>
+<br>
+<a href="index.jsp">
+    <input type="button" value="Volver a la página principal">
+</a>
 </body>
 </html>
 

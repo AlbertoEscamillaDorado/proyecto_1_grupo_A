@@ -60,10 +60,7 @@ public class TurnoServlet extends HttpServlet {
         if (ciudadano != null) {
             turnoController.agregarTurno(idProgresivo, fecha, descripcionTramite, estado, ciudadano);
         }
-        turnos = turnoController.listarTurnos();
-        request.setAttribute("turnos", turnos);
-        request.getRequestDispatcher("turnos.jsp").forward(request, response);
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("turnos");
 
     }
 

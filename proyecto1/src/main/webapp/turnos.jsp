@@ -41,6 +41,8 @@
         <input type="submit" value="Filtrar">
     </form>
 </table>
-<br><a href="index.jsp">Página Principal</a>
+<br><a href="index.jsp">
+    <input type="button" value="Volver a la página principal">
+</a>
 </body>
 </html>
