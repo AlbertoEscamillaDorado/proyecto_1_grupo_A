@@ -1,0 +1,214 @@
+/*botón inicio*/
+.bookmarkBtn {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.349);
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+}
+
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, #70bbff, #4aaeff);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  transition-duration: 0.3s;
+  font-size: 1.04em;
+}
+
+.bookmarkBtn:hover .IconContainer {
+  width: 90px;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:hover .text {
+  transform: translate(10px);
+  width: 0;
+  font-size: 0;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.3s;
+}
+/*botones agregar y atender*/
+.cssbuttons-io {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(to right, #70bbff, #4aaeff);
+  color: ghostwhite;
+  overflow: hidden;
+}
+
+.cssbuttons-io svg {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+}
+
+.cssbuttons-io span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cssbuttons-io::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+.cssbuttons-io:hover span {
+
+  color: black;
+}
+
+.cssbuttons-io:active {
+  transform: scale(0.95);
+}
+/*diseño de tablas*/
+.card {
+  width: 250px;
+  background: rgb(44, 44, 44);
+  font-family: "Courier New", Courier, monospace;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  overflow: hidden;
+}
+
+.card__title {
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgb(167, 159, 159);
+  font-size: 0.95rem;
+}
+
+.card__data {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  border-right: 1px solid rgb(203, 203, 203);
+  border-left: 1px solid rgb(203, 203, 203);
+  border-bottom: 1px solid rgb(203, 203, 203);
+}
+
+.card__right {
+  width: 60%;
+  border-right: 1px solid rgb(203, 203, 203);
+}
+
+.card__left {
+  width: 40%;
+  text-align: end;
+}
+
+.item {
+  padding: 3px 0;
+  background-color: white;
+}
+
+.card__right .item {
+  padding-left: 0.8em;
+}
+
+.card__left .item {
+  padding-right: 0.8em;
+}
+
+.item:nth-child(even) {
+  background: rgb(234, 235, 234);
+}
+/*diseño div*/
+.contenedor {
+    display: flex;
+    flex-direction: column; /* Opciones en columna */
+    gap: 20px;              /* Separación vertical */
+    background-color: #a6d5ff;
+    padding: 30px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 300px;
+      width: 80%;
+  }
+  body {
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #e3f2ff
+  }
+
+header {
+display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #a6d5ff;
+        width: 100%;
+        border-radius: 10px;
+        padding: 30px;
+  }
+footer{
+display: flex;
+
+        align-items: center;
+        justify-content: center;
+        background-color: #a6d5ff;
+        width: 100%;
+        border-radius: 10px;
+}
