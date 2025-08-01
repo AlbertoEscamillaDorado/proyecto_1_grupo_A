@@ -196,6 +196,8 @@
         align-items: center;
         justify-content: center;
         background-color: #e3f2ff
+        margin: 0;
+        min-height: 10vh;
   }
 
 header {
@@ -239,6 +241,7 @@ display: flex;
   gap: 20px;
   box-sizing: border-box;
   border-radius: 16px;
+  margin: 0 auto;
 }
 
 .form-container .form {
@@ -264,6 +267,7 @@ display: flex;
   color: #000000;
   font-weight: 600;
   font-size: 18px;
+
 }
 
 .form-container .form-group input {
@@ -283,6 +287,7 @@ display: flex;
   border-collapse: collapse;
   width: 50%;
   table-layout: fixed;
+  margin: 0 auto;
 }
 
 #customers td, #customers th {
@@ -305,4 +310,7 @@ display: flex;
   background-color: #a6d5ff;
   color: black;
   width: 200px;
+}
+.titulo-centrado {
+    text-align: center;
 }

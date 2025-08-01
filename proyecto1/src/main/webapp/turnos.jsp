@@ -7,7 +7,7 @@
 <body>
 <div>
     <div>
-    <h2>Filtro</h2>
+        <h2 class="titulo-centrado">Filtro</h2>
     <form action="turnos" method="get">
     <div class="form-container">
         <div>
@@ -37,7 +37,7 @@
     </form>
     </div>
         <div>
-    <h2>Lista de Turnos</h2>
+            <h2 class="titulo-centrado">Lista de Turnos</h2>
     <table border="1" id="customers">
         <tr><th>ID Ciudadano</th><th>Numero de Turno</th><th>Fecha</th><th>Descripción del Trámite</th><th>Estado</th><th>Id Turno</th></tr>
         <%

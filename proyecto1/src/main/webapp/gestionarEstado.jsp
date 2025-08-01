@@ -38,7 +38,7 @@
     </div>
 </form>
 
-<table id="customers">
+<table border="1" id="customers">
     <tr>
         <th>ID Ciudadano</th>
         <th>Numero de Turno</th>
