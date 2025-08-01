@@ -5,8 +5,7 @@
 <html>
 <head><title></title></head>
 <body>
-
-<div class="form-body">
+<div>
     <div>
     <h2>Filtro</h2>
     <form action="turnos" method="get">
@@ -40,20 +39,19 @@
         <div>
     <h2>Lista de Turnos</h2>
     <table border="1" id="customers">
-        <tr><th>Id</th><th>Numero de Turno</th><th>Fecha</th><th>Descripción del Trámite</th><th>Estado</th><th>Ciudadano</th></tr>
+        <tr><th>ID Ciudadano</th><th>Numero de Turno</th><th>Fecha</th><th>Descripción del Trámite</th><th>Estado</th><th>Id Turno</th></tr>
         <%
         List<Turno> turnos = (List<Turno>) request.getAttribute("turnos");
         if (turnos != null) {
         for (Turno t : turnos) {
         %>
         <tr>
-            <td><%= t.getId() %></td>
+            <td><%= t.getCiudadano().getId() %></td>
             <td><%= t.getIdProgresivo() %></td>
             <td><%= t.getFecha() %></td>
             <td><%= t.getDescripcionTramite() %></td>
             <td><%= t.getEstado() %></td>
-            <td><%= t.getCiudadano().getId() %></td>
-
+            <td><%= t.getId() %></td>
         </tr>
         <%
         }

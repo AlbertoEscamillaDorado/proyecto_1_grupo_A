@@ -276,11 +276,6 @@ display: flex;
   border: 1px solid #414141;
 }
 
-.form-body {
-    display: grid;
-    grid-template-columns: 28% 1fr;
-}
-
 /*Tablas en general*/
 
 #customers {
