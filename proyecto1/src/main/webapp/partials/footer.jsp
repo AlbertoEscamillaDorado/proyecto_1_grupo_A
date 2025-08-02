@@ -1,10 +1,3 @@
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<footer>
+    <p> &copy; Proyecto desarrollado por Alberto, Andrea y Pablo</p>
+</footer>

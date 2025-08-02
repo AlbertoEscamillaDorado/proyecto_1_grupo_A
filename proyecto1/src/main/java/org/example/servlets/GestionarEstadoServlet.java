@@ -22,8 +22,9 @@ public class GestionarEstadoServlet extends HttpServlet {
     // mostrar los datos de un turno
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         turnos = turnoController.listarTurnos();
-
         request.setAttribute("turnos", turnos);
         request.getRequestDispatcher("gestionarEstado.jsp").forward(request, response);
     }
@@ -32,6 +33,8 @@ public class GestionarEstadoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         Long idTurno = Long.valueOf(request.getParameter("turno"));
         Estado estado = Estado.valueOf(request.getParameter("estado"));
 
@@ -43,7 +46,6 @@ public class GestionarEstadoServlet extends HttpServlet {
 
             List<Turno> turnos = turnoController.listarTurnos();
             request.setAttribute("turnos", turnos);
-
             request.getRequestDispatcher("gestionarEstado.jsp").forward(request, response);
         }
 

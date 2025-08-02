@@ -29,6 +29,8 @@ public class TurnoServlet extends HttpServlet {
     // mostrar los datos de un turno
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         turnos = turnoController.listarTurnos();
 
         String fechaParam = request.getParameter("fecha");
@@ -43,12 +45,15 @@ public class TurnoServlet extends HttpServlet {
                 .collect(Collectors.toList());
 
         request.setAttribute("turnos", turnosFiltrados);
+
         request.getRequestDispatcher("turnos.jsp").forward(request, response);
     }
     // recoger los datos de un turno y lo añade a la BBDD
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         Long idProgresivo = GenerarIdProgresivo.generarIdProgresivo();
         LocalDate fecha = LocalDate.now();
         String descripcionTramite = request.getParameter("descripcionTramite");
