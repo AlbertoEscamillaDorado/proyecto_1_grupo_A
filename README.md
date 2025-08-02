@@ -12,6 +12,6 @@ Simulación de una aplicación de gestión de ciudadanos y turnos, con método d
 - Java 17
 
 ## Autores
-Alberto Escamilla 
-Andrea Suárez
+Alberto Escamilla  
+Andrea Suárez  
 Pablo Corroto
