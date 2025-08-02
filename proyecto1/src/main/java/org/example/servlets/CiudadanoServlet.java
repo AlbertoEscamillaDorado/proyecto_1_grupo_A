@@ -21,6 +21,7 @@ public class CiudadanoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Sirve para mostrar/guardar los caracteres especiales de la base de datos
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         ciudadanos = ciudadanoController.listarCiudadanos();
@@ -29,8 +30,7 @@ public class CiudadanoServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String nombre = request.getParameter("nombre");

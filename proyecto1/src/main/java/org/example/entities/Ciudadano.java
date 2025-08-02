@@ -16,7 +16,8 @@ public class Ciudadano {
     @OneToMany(mappedBy = "ciudadano", cascade = CascadeType.ALL)
     private List<Turno> turnos = new ArrayList<>();
 
-    public Ciudadano() {}
+    public Ciudadano() {
+    }
 
     public Ciudadano(String nombre, Long telefono) {
         this.nombre = nombre;

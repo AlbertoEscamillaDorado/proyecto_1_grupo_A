@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.example.entities.Turno" %>
+<%@ page import="org.example.enums.Estado" %>
 <%@ include file="partials/header.jsp" %>
 <html>
 <head><title></title></head>
@@ -26,12 +27,12 @@
           <span>
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 0h24v24H0z" fill="none"></path>
-               <path
-                    d="M17 2v2h3.007c.548 0 .993.445.993.993v16.014c0 .548-.445.993-.993.993H3.993C3.445 22 3 21.555 3 21.007V4.993C3 4.445 3.445 4 3.993 4H7V2h10zM7 6H5v14h14V6h-2v2H7V6zm2 10v2H7v-2h2zm0-3v2H7v-2h2zm0-3v2H7v-2h2zm6-6H9v2h6V4z"
-                       fill="currentColor"
-               ></path>
+               <path d="M17 2v2h3.007c.548 0 .993.445.993.993v16.014c0 .548-.445.993-.993.993H3.993C3.445 22 3 21.555 3 21.007V4.993C3 4.445 3.445 4 3.993 4H7V2h10zM7 6H5v14h14V6h-2v2H7V6zm2 10v2H7v-2h2zm0-3v2H7v-2h2zm0-3v2H7v-2h2zm6-6H9v2h6V4z"
+                       fill="currentColor">
+               </path>
             </svg>
-            Filtrar</span>
+            Filtrar
+            </span>
         </button>
         </div>
     </form>
@@ -50,7 +51,7 @@
             <td><%= t.getIdProgresivo() %></td>
             <td><%= t.getFecha() %></td>
             <td><%= t.getDescripcionTramite() %></td>
-            <td><%= t.getEstado() %></td>
+            <td><%= t.getEstado() == Estado.EN_ESPERA ? "En Espera" : "Atendido" %></td>
             <td><%= t.getId() %></td>
         </tr>
         <%

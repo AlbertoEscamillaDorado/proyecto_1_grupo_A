@@ -2,6 +2,8 @@
 <%@ page import="java.util.List" %>
 <%@ include file="partials/header.jsp" %>
 <%@ page import="org.example.entities.Turno" %>
+<%@ page import="org.example.enums.Estado" %>
+
 <html lang="en">
 <head><title>Gestionar turnos</title></head>
 <body>
@@ -59,7 +61,7 @@
                 <td><%= t.getIdProgresivo() %></td>
                 <td><%= t.getFecha() %></td>
                 <td><%= t.getDescripcionTramite() %></td>
-                <td><%= t.getEstado() %></td>
+                <td><%= t.getEstado() == Estado.EN_ESPERA ? "En Espera" : "Atendido" %></td>
                 <td><%= t.getId() %></td>
             </tr>
             <%

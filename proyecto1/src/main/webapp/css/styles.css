@@ -1,4 +1,4 @@
-/*botón inicio*/
+/*Botón inicio*/
 .bookmarkBtn {
   width: 100px;
   height: 40px;
@@ -58,7 +58,7 @@
   transform: scale(0.95);
   transition-duration: 0.3s;
 }
-/*botones agregar y atender*/
+/*Botones agregar y atender*/
 .cssbuttons-io {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;;
@@ -118,7 +118,7 @@
 .cssbuttons-io:active {
   transform: scale(0.95);
 }
-/*diseño de tablas*/
+/*Diseño de tablas*/
 .card {
   width: 250px;
   background: rgb(44, 44, 44);
@@ -173,11 +173,11 @@
 .item:nth-child(even) {
   background: rgb(234, 235, 234);
 }
-/*diseño div*/
+/*Diseño div*/
 .contenedor {
     display: flex;
-    flex-direction: column; /* Opciones en columna */
-    gap: 20px;              /* Separación vertical */
+    flex-direction: column;
+    gap: 20px;
     background-color: #a6d5ff;
     padding: 30px 50px;
     border-radius: 12px;
@@ -198,6 +198,7 @@
         background-color: #e3f2ff
         margin: 0;
         min-height: 10vh;
+        padding-bottom: 100px;
   }
 
 header {
@@ -214,7 +215,7 @@ display: flex;
 
   }
 footer{
-position: fixed;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -265,7 +266,6 @@ position: fixed;
   color: #000000;
   font-weight: 600;
   font-size: 18px;
-
 }
 
 .form-container .form-group input {
@@ -278,7 +278,7 @@ position: fixed;
   border: 1px solid #414141;
 }
 
-/*Tablas en general*/
+/*Diseño de las Tablas*/
 
 #customers {
   font-family: Arial, Helvetica, sans-serif;

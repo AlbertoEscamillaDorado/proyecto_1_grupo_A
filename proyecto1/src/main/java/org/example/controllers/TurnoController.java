@@ -15,7 +15,9 @@ public class TurnoController {
         turnoJPA.agregarTurno(idProgresivo, fecha, descripcionTramite, estado, ciudadano);
     }
 
-    public List<Turno> listarTurnos() {return turnoJPA.listarTurnos();}
+    public List<Turno> listarTurnos() {
+        return turnoJPA.listarTurnos();
+    }
 
     public Turno consultarTurno(Long id) {
         return turnoJPA.consultarTurnos(id);

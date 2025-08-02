@@ -19,9 +19,10 @@ public class GestionarEstadoServlet extends HttpServlet {
     private List<Turno> turnos = new ArrayList<>();
     private final TurnoController turnoController = new TurnoController();
 
-    // mostrar los datos de un turno
+    // Mostrar los datos de un turno
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Sirve para mostrar/guardar los caracteres especiales de la base de datos
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         turnos = turnoController.listarTurnos();
@@ -29,7 +30,7 @@ public class GestionarEstadoServlet extends HttpServlet {
         request.getRequestDispatcher("gestionarEstado.jsp").forward(request, response);
     }
 
-    // recoger los datos de un turno y lo añade a la BBDD
+    // Recoger los datos de un turno y lo añade a la BBDD
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -48,9 +49,5 @@ public class GestionarEstadoServlet extends HttpServlet {
             request.setAttribute("turnos", turnos);
             request.getRequestDispatcher("gestionarEstado.jsp").forward(request, response);
         }
-
     }
-
 }
-
-

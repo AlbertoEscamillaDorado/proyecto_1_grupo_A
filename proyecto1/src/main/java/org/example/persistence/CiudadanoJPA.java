@@ -2,17 +2,14 @@ package org.example.persistence;
 
 import jakarta.persistence.EntityManager;
 import org.example.entities.Ciudadano;
-import org.example.entities.Turno;
-import org.example.enums.Estado;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class CiudadanoJPA {
     public void agregarCiudadano(String nombre, Long telefono) {
         EntityManager em = ConfigJPA.getEntityManager();
         em.getTransaction().begin();
-        em.persist(new Ciudadano(nombre,telefono));
+        em.persist(new Ciudadano(nombre, telefono));
         em.getTransaction().commit();
         em.close();
     }

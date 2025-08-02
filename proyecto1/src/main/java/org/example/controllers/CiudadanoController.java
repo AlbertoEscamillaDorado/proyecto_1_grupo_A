@@ -9,7 +9,7 @@ public class CiudadanoController {
     CiudadanoJPA ciudadanoJPA = new CiudadanoJPA();
 
     public void agregarCiudadano(String nombre, Long telefono) {
-        ciudadanoJPA.agregarCiudadano(nombre,telefono);
+        ciudadanoJPA.agregarCiudadano(nombre, telefono);
     }
 
     public List<Ciudadano> listarCiudadanos() {
@@ -19,20 +19,4 @@ public class CiudadanoController {
     public Ciudadano consultarCiudadano(Long id) {
         return ciudadanoJPA.consultarCiudadano(id);
     }
-
-    public void update(Long id, String nombre, String apellido) {
-
-    }
-
-
-    //Metodo para que no haya respuestas vacías
-    /*private Type<T> leerNoVacio() {
-        String entrada = scanner.nextLine();
-        while (entrada.isBlank()) {
-            System.out.print("Este campo es obligatorio. Ingrese de nuevo: ");
-            entrada = scanner.nextLine();
-        }
-        return entrada;
-    }*/
-
 }
